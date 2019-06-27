@@ -17,6 +17,8 @@ import internal.GlobalVariable as GlobalVariable
 'Create new issue'
 response = WS.sendRequestAndVerify(findTestObject('Issue/CreateIssue', [('URL') : GlobalVariable.URL]))
 
+def issueTypePar = 'Bug'
+
 //
 def slurper = new groovy.json.JsonSlurper()
 
@@ -34,9 +36,16 @@ GlobalVariable.IssueKey = LocalIssueKey
 
 println("global variable value is -> $GlobalVariable.IssueKey")
 
+//---------------------------------------------------------------
+//Set response for getIssue
 response = WS.sendRequestAndVerify(findTestObject('Issue/GetIssue'))
 
-result = slurper.parseText(response.getResponseBodyContent())
+// verify issueType
+WS.verifyElementPropertyValue(response, 'fields.issuetype.name', 'Bug')
 
-println("$result")
+'Adding a new componet to issue'
+WS.sendRequestAndVerify(findTestObject('Issue/UpdateIssue', [('URL') : GlobalVariable.URL, ('IssueKey') : GlobalVariable.IssueKey]))
+
+WS.sendRequestAndVerify(findTestObject('Issue/TransitionIssue', [('URL') : GlobalVariable.URL, ('IssueKey') : GlobalVariable.IssueKey
+            , ('TransitionId') : '51']))
 
