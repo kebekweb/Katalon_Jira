@@ -26,12 +26,26 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>${REST_URL}/issue/IGS-1904</restUrl>
+   <restUrl>https://${URL}/issue/${issueKey}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.URL</defaultValue>
+      <description></description>
+      <id>43dba952-096e-423e-8a84-64fd761a19a5</id>
+      <masked>false</masked>
+      <name>URL</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.IssueKey</defaultValue>
+      <description></description>
+      <id>2dde3962-bc3d-4a1a-9db0-446681cc03c4</id>
+      <masked>false</masked>
+      <name>issueKey</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -49,11 +63,14 @@ ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 
 //check  status code
-//WS.verifyResponseStatusCode(response, 200)
-//
-//assertThat(response.getStatusCode()).isEqualTo(200)
+WS.verifyResponseStatusCode(response, 200)
+
+assertThat(response.getStatusCode()).isEqualTo(200)
 
 // Check issue Type = Task
-//WS.verifyElementPropertyValue(response, 'fields.issuetype.name', 'Task')</verificationScript>
+//WS.verifyElementPropertyValue(response, 'fields.issuetype.name', 'Task')
+
+
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
