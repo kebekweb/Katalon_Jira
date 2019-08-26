@@ -41,11 +41,12 @@ println("global variable value is -> $GlobalVariable.IssueKey")
 response = WS.sendRequestAndVerify(findTestObject('Issue/GetIssue'))
 
 // verify issueType
-WS.verifyElementPropertyValue(response, 'fields.issuetype.name', 'Bug')
+WS.verifyElementPropertyValue(response, 'fields.issuetype.name', 'Task')
 
 'Adding a new componet to issue'
 WS.sendRequestAndVerify(findTestObject('Issue/UpdateIssue', [('URL') : GlobalVariable.URL, ('IssueKey') : GlobalVariable.IssueKey]))
 
+'Transition issue'
 WS.sendRequestAndVerify(findTestObject('Issue/TransitionIssue', [('URL') : GlobalVariable.URL, ('IssueKey') : GlobalVariable.IssueKey
             , ('TransitionId') : '51']))
 

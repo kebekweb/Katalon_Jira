@@ -4,14 +4,4 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
-   <GlobalVariableEntity>
-      <description>The Base REST URL</description>
-      <initValue>'test-acjira/rest/api/2'</initValue>
-      <name>URL</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>IssueKey</name>
-   </GlobalVariableEntity>
 </GlobalVariableEntities>

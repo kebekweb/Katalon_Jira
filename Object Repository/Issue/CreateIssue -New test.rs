@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>CreateIssue</name>
+   <name>CreateIssue -New test</name>
    <tag></tag>
-   <elementGuidId>4558b709-4fa1-4436-a3d2-995419a6f676</elementGuidId>
+   <elementGuidId>d36d8d41-0259-4fe2-87dc-f3d115d553f2</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <followRedirects>false</followRedirects>
@@ -17,16 +17,16 @@
    <httpHeaderProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>Content-Type</name>
+      <name>Authorization</name>
       <type>Main</type>
-      <value>application/json</value>
+      <value>Basic bWljaGFlbHNoOlJpY2gxOTg2</value>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>Authorization</name>
+      <name>Content-Type</name>
       <type>Main</type>
-      <value>Basic bWljaGFlbHNoOlJpY2gxOTg2</value>
+      <value>application/json</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>

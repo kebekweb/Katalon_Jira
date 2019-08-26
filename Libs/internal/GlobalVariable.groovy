@@ -10,7 +10,8 @@ import com.kms.katalon.core.main.TestCaseMain
 public class GlobalVariable {
      
     /**
-     * <p>Profile default : The Base REST URL</p>
+     * <p>Profile Dev_env : The Base REST URL
+Profile Prod_env : The Base REST URL</p>
      */
     public static Object URL
      
@@ -18,6 +19,11 @@ public class GlobalVariable {
      * <p></p>
      */
     public static Object IssueKey
+     
+    /**
+     * <p></p>
+     */
+    public static Object bugParams
      
 
     static {
@@ -28,6 +34,7 @@ public class GlobalVariable {
     
             URL = selectedVariables['URL']
             IssueKey = selectedVariables['IssueKey']
+            bugParams = selectedVariables['bugParams']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
